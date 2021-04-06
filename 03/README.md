@@ -52,7 +52,7 @@ With the pair function we can create a pair as follows:
 ```fsharp
 let p = pair 1 2
 ```
-Define a funciton `fst` that returns the first element of the pair. For example,
+Define a function `fst` that returns the first element of the pair. For example,
 `pair 1 2 |> fst` should return 1.
 
 ### Problem 3
