@@ -1,6 +1,6 @@
-let pair (x: int) (y: int) m =
-    if m = 0 then x
-    else y
+let pair (x: int) (y: int) m : int = m x y
 
-let myFst (p: int -> int) = p 0
-let mySnd (p: int -> int) = p 1
+let first p = p (fun x y -> x)
+
+pair 1 2 |> first |> printfn "%A"
+pair 2 4 |> first |> printfn "%A"
