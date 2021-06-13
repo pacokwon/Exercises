@@ -51,3 +51,17 @@ let fibonacci =
 
 let rec seqOnes = Seq.unfold (fun () -> Some (1, ())) ()
 let rec seqNatural = Seq.unfold (fun state -> Some (state, state + 1)) 1
+
+let fiboAlt =
+  let nth_fibo n =
+    let rec loop n a b =
+      if n = 0 then a
+      elif n = 1 then b
+      else loop (n - 1) b (a + b)
+
+    loop n 0 1
+
+  let rec aux n =
+    Cons (nth_fibo n, fun () -> aux (n + 1))
+
+  aux 0
