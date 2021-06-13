@@ -48,3 +48,6 @@ let rec natural = Cons (1, fun () -> map <| (+) 1 <| natural)
 let fibonacci =
     let rec fibo a b = Cons (a, fun () -> fibo b (a + b))
     fibo 0 1
+
+let rec seqOnes = Seq.unfold (fun () -> Some (1, ())) ()
+let rec seqNatural = Seq.unfold (fun state -> Some (state, state + 1)) 1
